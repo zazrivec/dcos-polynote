@@ -20,4 +20,4 @@ script:
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push ${DOCKER_USERNAME}/${IMAGE}:${POLYNOTE_VERSION}-${SPARK_VERSION}
+  - docker push ${DOCKER_USERNAME}/${IMAGE}:${POLYNOTE_VERSION}-${SPARK_VERSION}-${SCALA_VERSION}-${HADOOP_VERSION}
