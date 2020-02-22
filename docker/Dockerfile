@@ -1,4 +1,5 @@
-FROM mesosphere/spark:2.9.0-2.4.3-scala-2.11-hadoop-2.9
+ARG SPARK_VERSION=2.9.0-2.4.3-scala-2.11-hadoop-2.9
+FROM mesosphere/spark:${SPARK_VERSION}
 
 ARG SPARK_VERSION=2.9.0-2.4.3-scala-2.11-hadoop-2.9
 ARG POLYNOTE_VERSION
