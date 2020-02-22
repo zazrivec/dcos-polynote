@@ -1,7 +1,7 @@
 ARG SCALA_VERSION=2.11
 ARG HADOOP_VERSION=hadoop-2.9
 ARG SPARK_VERSION=2.9.0-2.4.3
-FROM mesosphere/spark:${SPARK_VERSION}-${SCALA_VERSION}-${HADOOP_VERSION}
+FROM mesosphere/spark:${SPARK_VERSION}-scala-${SCALA_VERSION}-${HADOOP_VERSION}
 
 ARG SCALA_VERSION=2.11
 ARG HADOOP_VERSION=hadoop-2.9
@@ -26,7 +26,7 @@ RUN mkdir -p $HADOOP_CONF_DIR
 run pip3 install jep jedi 'pyspark==2.4.3' virtualenv numpy pandas koalas
 
 # polynote install
-ENV SPARK_MESOS_EXECUTOR_DOCKER_IMAGE mesosphere/spark:${SPARK_VERSION}-${SCALA_VERSION}-${HADOOP_VERSION}
+ENV SPARK_MESOS_EXECUTOR_DOCKER_IMAGE mesosphere/spark:${SPARK_VERSION}-scala-${SCALA_VERSION}-${HADOOP_VERSION}
 WORKDIR /opt
 RUN if [ "$SCALA_VERSION" = "2.12" ] ; then INFIX="-2.12" ; else INFIX="" ; fi && \
  wget -q -O polynote-dist.tar.gz "https://github.com/polynote/polynote/releases/download/${POLYNOTE_VERSION}/polynote-dist${INFIX}.tar.gz" && \
