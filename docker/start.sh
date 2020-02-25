@@ -45,4 +45,4 @@ if [ "${TZ:+x}" == "x" ]; then
   fi
 fi
 
-SPARK_HOME=/opt/spark /opt/polynote/polynote
+SPARK_HOME=/opt/spark /opt/polynote/polynote.py
